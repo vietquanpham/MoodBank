@@ -1,26 +1,33 @@
 {% extends "base.html" %}
 {% block body %}
-<body style="background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20%2848%29.jpg'); background-repeat: no-repeat; background-size: cover; background-position: absolute;"></body>
-    <div class="container">
+<body class="authentication-bg">
+    <div class="container py-5">
         <div class="row">
-            <div class="col-md-4 offset-md-4" style="padding: 60px">
-                <form method=POST action="{{ url_for('login') }}">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1" style="color:azure"><strong>Username</strong></label>
-                        <input type="text" class="form-control" name="username" placeholder="Username">
+            <div class="col-auto my-4 mx-auto">
+                <div class="card rounded-0 special-card">
+                    <div class="card-header">
+                        <h3 class="mb-0">Login</h3>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1" style="color:azure"><strong>Password</strong></label>
-                        <input type="password" class="form-control" name="pass" placeholder="Password">
+                    <div class="card-body">
+                        <form method=POST action="{{ url_for('login') }}">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"><strong>Username</strong></label>
+                                <input type="text" class="form-control" name="username" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1"><strong>Password</strong></label>
+                                <input type="password" class="form-control" name="pass" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                        </form>
+                        {% if error %}
+                            <div class="text" style="color:red">{{error}}</div>
+                        {% endif %}
+                        <br>
+                        <div>
+                            Don't have an account? <a href="{{ url_for('register') }}" style="color:blue">Sign up here</a>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Log In</button>
-                </form>
-                {% if error %}
-                    <div class="text" style="color:red">{{error}}</div>
-                {% endif %}
-                <br>
-                <div style="color:azure">
-                    Don't have an account? <a href="{{ url_for('register') }}" style="color:cyan">Sign up here</a>
                 </div>
             </div>
         </div>

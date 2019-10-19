@@ -1,0 +1,9 @@
+.special-card {
+    background-color: rgba(245, 245, 245, 0.9);
+}
+.authentication-bg {
+    background-image: url('../img/login.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: absolute;
+}
