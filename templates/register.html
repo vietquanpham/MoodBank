@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %} 
+<body style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: absolute;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4" style="padding: 60px">
+                <form method=POST action="{{ url_for('register') }}">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"><strong>Username</strong></label>
+                        <input type="text" class="form-control" name="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><strong>Password</strong></label>
+                        <input type="password" class="form-control" name="pass" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+                {% if error %}
+                    <div class="text" style="color:red">{{error}}</div>
+                {% endif %}
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
