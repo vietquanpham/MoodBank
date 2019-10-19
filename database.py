@@ -5,7 +5,7 @@ class DatabaseConnection():
 
     def __init__(self):
         client = MongoClient('localhost', 27017)
-        self.db = client["twitterbank"]
+        self.db = client["MoodBank"]
 
     def appendToObject(self, cursor):
         result = []
