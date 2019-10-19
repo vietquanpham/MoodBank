@@ -8,21 +8,10 @@ db = DatabaseConnection()
 
 @app.route("/", methods=["GET"])
 # home page 
-def index():
-    hour_of_day = datetime.datetime.now().time().hour
-    greeting = ""
-    if hour_of_day < 12: 
-        greeting = "Good morning"
-    elif hour_of_day >= 12 and hour_of_day < 18:
-        greeting = "Good afternoon"
-    else:
-        greeting = "Good evening" 
-    
-    if session.get('logged_in') == True:
-        #return "You are logged in as " + session["username"]
-        greeting += ", " + session["username"]
-        return render_template("index.html", greeting=greeting)  
-    return render_template("index.html", greeting=greeting + "!")
+def index(): 
+    if session.get('logged_in') == False:
+        return redirect(url_for("login")) 
+    return render_template("index.html")
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
