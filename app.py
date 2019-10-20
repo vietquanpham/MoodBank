@@ -14,16 +14,17 @@ from opencage.geocoder import OpenCageGeocode
 from pprint import pprint
 import requests
 import json
+import config
 
 app = Flask(__name__)
 db = DatabaseConnection()
 
-consumer_key = 'P9NVb0v1F0mLVQA8zwbq7bGwy'
-consumer_secret = '6H6KVEZB6WZjvweQEML7cwxg1oc615Chb0nRolJJVDKkL5B4Zr'
-access_token = '2622392858-deLZuS9SRolzoAQP2K9WYJN2T7Brv1O8tOBfXBY'
-access_token_secret = 'ViyktIVvgOKlpW3yKLRVD4Ot2cSEvXQ3VOeSpeS2KWVeo'
-opencage_key = '44afc67e2f724510abc4bd3706dd070b'
-darksky_key = '18361e6c321dc572643adebd1bfe93d5'
+consumer_key = config.consumer_key
+consumer_secret = config.consumer_secret
+access_token = config.access_token
+access_token_secret = config.access_token_secret
+opencage_key = config.opencage_key
+darksky_key = config.darksky_key
 
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -56,10 +57,10 @@ def analyze():
         db.update('users', {'username': session['username']}, {'$set': {'savingGoal': savingGoal}})
         if annotateAnswers(ans) < 0 :
             message = "Sometimes spending just a little more can be rewarding. We feel like this is one of those times, so we have customized a list of things you can buy in exchange for happiness."
-            choice = ['Discount on car maintainance','Discount on future house maintainance', 'Discount on wedding services']
+            choice = ['Voucher for spa', 'Discount for Whole Food','Charity or gifting a friend']
         else:
             message = "We value your happiness and are willing to go to great lengths to ensure it. With our saving options, you can rest assured knowing you have commited to a long term investment in future happiness."
-            choice = ['Voucher for spa', 'Discount for Whole Food','Charity or gifting a friend']
+            choice = ['Discount on car maintainance','Discount on future house maintainance', 'Discount on wedding services']
         return render_template("result.html", savingGoal=savingGoal, message=message, choice1=choice[0], choice2=choice[1], choice3=choice[2])
 
     return render_template("analyze.html")
