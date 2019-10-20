@@ -28,3 +28,7 @@
     background-color: #4CAF50; /* Add a green color to the "active/current" link */
     color: white;
   }
+
+  .purple-border textarea {
+    border: 1px solid #ba68c8;
+}

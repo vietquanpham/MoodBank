@@ -5,6 +5,9 @@ import datetime, bcrypt
 app = Flask(__name__)
 db = DatabaseConnection()
 
+@app.route("/analyze", methods=["POST", "GET"])
+def analyze():
+    return render_template("analyze.html")
 
 @app.route("/", methods=["GET"])
 # home page 
