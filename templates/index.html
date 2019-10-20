@@ -1,3 +1,24 @@
 {% extends "base.html" %}
 {% block body %}
+<div class="container-fluid">
+    <h1 class="mt-4">Dashboard</h1>
+    <p>Welcome to MoodBank</p>
+    <div class="card text-white bg-success mb-3" style="max-width: 16rem;">
+        <div class="card-header">
+            <p class="mb-0">Your net income for this month is...</p>
+        </div>
+        <div class="card-body">
+            <p style="font-size: 20px;">${{income}}</p>
+        </div>
+    </div>
+    <div class="card text-white bg-info mb-3" style="max-width: 16rem;">
+        <div class="card-header">
+            <p class="mb-0">Your saving goal for this month is...</p>
+        </div>
+        <div class="card-body">
+            <p style="font-size: 20px;">${{savingGoal}}</p>
+        </div>
+    </div>
+</div>
+<!-- /#page-content-wrapper -->
 {% endblock %}

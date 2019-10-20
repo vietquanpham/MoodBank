@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-auto my-4 mx-auto">
+            <div class="card rounded-0 special-card">
+                <div class="card-header">
+                    <h3 class="mb-0">Enter your net income</h3>
+                </div>
+                <div class="card-body">
+                    <form method=POST action="{{ url_for('financials') }}">
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="income" placeholder=0>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
