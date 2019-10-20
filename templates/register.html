@@ -3,20 +3,94 @@
 <body class="authentication-bg">
     <div class="container py-5">
         <div class="row">
-            <div class="col-auto my-4 mx-auto">
+            <div class="col-auto mx-auto">
                 <div class="card rounded-0 special-card">
                     <div class="card-header">
                         <h3 class="mb-0">Sign Up</h3>
                     </div>
                     <div class="card-body">
                         <form method=POST action="{{ url_for('register') }}">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="exampleFormControlInput1"><strong>First Name</strong></label>
+                                    <input type="text" class="form-control" name="first" placeholder="First Name" required="true">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="exampleFormControlInput1"><strong>Last Name</strong></label>
+                                    <input type="text" class="form-control" name="last" placeholder="Last Name" required="true">
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"><strong>Username</strong></label>
-                                <input type="text" class="form-control" name="username" placeholder="Username">
+                                <input type="text" class="form-control" name="username" placeholder="Username" required="true">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1"><strong>Password</strong></label>
-                                <input type="password" class="form-control" name="pass" placeholder="Password">
+                                <input type="password" class="form-control" name="pass" placeholder="Password" required="true">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="exampleFormControlInput1"><strong>City</strong></label>
+                                    <input type="text" class="form-control" name="city" placeholder="City" required="true">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="exampleFormControlSelect1"><strong>State</strong></label>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="state" required="true">
+                                        <option value="">N/A</option>
+                                        <option>Alaska</option>
+                                        <option>Alabama</option>
+                                        <option>Arkansas</option>
+                                        <option>Arizona</option>
+                                        <option>California</option>
+                                        <option>Colorado</option>
+                                        <option>Connecticut</option>
+                                        <option>District of Columbia</option>
+                                        <option>Delaware</option>
+                                        <option>Florida</option>
+                                        <option>Georgia</option>
+                                        <option>Hawaii</option>
+                                        <option>Iowa</option>
+                                        <option>Idaho</option>
+                                        <option>Illinois</option>
+                                        <option>Indiana</option>
+                                        <option>Kansas</option>
+                                        <option>Kentucky</option>
+                                        <option>Louisiana</option>
+                                        <option>Massachusetts</option>
+                                        <option>Maryland</option>
+                                        <option>Maine</option>
+                                        <option>Michigan</option>
+                                        <option>Minnesota</option>
+                                        <option>Missouri</option>
+                                        <option>Mississippi</option>
+                                        <option>Montana</option>
+                                        <option>North Carolina</option>
+                                        <option>North Dakota</option>
+                                        <option>Nebraska</option>
+                                        <option>New Hampshire</option>
+                                        <option>New Jersey</option>
+                                        <option>New Mexico</option>
+                                        <option>Nevada</option>
+                                        <option>New York</option>
+                                        <option>Ohio</option>
+                                        <option>Oklahoma</option>
+                                        <option>Oregon</option>
+                                        <option>Pennsylvania</option>
+                                        <option>Puerto Rico</option>
+                                        <option>Rhode Island</option>
+                                        <option>South Carolina</option>
+                                        <option>South Dakota</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Utah</option>
+                                        <option>Virginia</option>
+                                        <option>Vermont</option>
+                                        <option>Washington</option>
+                                        <option>Wisconsin</option>
+                                        <option>West Virginia</option>
+                                        <option>Wyoming</option>
+                                    </select>
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
                         </form>
