@@ -2,6 +2,10 @@
 {% block body %}
 <form method=POST action="{{ url_for('analyze') }}">
     <div class="form-group purple-border" style="padding-left:30px; padding-right: 30px; padding-top: 30px;">
+        <label for="exampleFormControlTextarea1">Enter your income</label>
+        <input type="number" class="form-control" name="income" placeholder=0>
+    </div>
+    <div class="form-group purple-border" style="padding-left:30px; padding-right: 30px; padding-top: 30px;">
         <label for="exampleFormControlTextarea1">Tell us about your most recent dream</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" name="answer1" rows="2", required="true"></textarea>
     </div>
